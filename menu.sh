@@ -1,51 +1,29 @@
 #!/bin/bash
 
-install_dependencies() {
-  if ! command -v python &>/dev/null; then
-    pkg update
-    pkg upgrade
+echo "Installing required packages..."
+    pkg update -y && pkg upgrade -y
     pkg install python -y
     pkg install openssl
-    pkg install clang python-dev libffi-dev
-  fi
-
-  if ! command -v pip &>/dev/null; then
+    pkg install clang
     python -m ensurepip --upgrade
-  fi
-
-  if ! pip show lz4 &>/dev/null; then
     pip install lz4
-  fi
-
-  if [ ! -f "ziso.py" ]; then
     curl -fLo ziso.py https://github.com/Fcharan/Simple-ISO-to-ZSO-Converter/blob/main/ziso.py
-    if [ $? -ne 0 ]; then
-      exit 1
-    fi
-  fi
-}
 
-download_script() {
-  curl -fLo iso_compressor.sh https://github.com/Fcharan/Simple-ISO-to-ZSO-Converter/blob/main/iso_compressor.sh
-  if [ $? -ne 0 ]; then
-    exit 1
-  fi
-}
+echo "Downloading Script..."
+wget https://github.com/Fcharan/Simple-ISO-to-ZSO-Converter/blob/main/iso_compressor.sh -O ~/iso_compressor.sh
 
-create_shortcut() {
-  echo '#!/bin/bash' > ~/ziso_menu
-  echo 'cd /data/data/com.termux/files/home && ./iso_compressor.sh' >> ~/ziso_menu
-  chmod +x ~/ziso_menu
-}
+chmod +x ~/iso_compressor.sh
 
-make_executable() {
-  chmod +x iso_compressor.sh
-}
+echo  Use Command 'zso_menu'  Now
+echo "alias zso_menu='bash ~/iso_compressor.sh'" >> ~/.bashrc
 
-install_dependencies
-download_script
-make_executable
-create_shortcut
+source ~/.bashrc
+exec bash
 
-echo "Installation complete!"
-echo "You can now run the menu by typing 'ziso_menu' in your terminal."
+echo Use Command 'zso_menu'  Now
+if alias zso_menu &>/dev/null; then
+    # Confirm that setup is complete
+    echo "Simple ISO To ZSO Converter setup complete. You can now use the command 'zso_menu' to start it."
+else
+    echo "Failed to add alias for 'zso_menu'. Please check the script."
+fi
