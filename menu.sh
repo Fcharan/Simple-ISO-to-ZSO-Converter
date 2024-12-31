@@ -14,7 +14,7 @@ install_dependencies() {
   fi
 
   if [ ! -f "ziso.py" ]; then
-    curl -fLo ziso.py https://github.com/Fcharan/WinlatorMali/releases/download/0.0/ziso.py
+    curl -fLo ziso.py https://github.com/Fcharan/Simple-ISO-to-ZSO-Converter/blob/main/ziso.py
     if [ $? -ne 0 ]; then
       exit 1
     fi
@@ -22,7 +22,7 @@ install_dependencies() {
 }
 
 download_script() {
-  curl -fLo iso_compressor.sh https://github.com/your-username/iso-compressor/raw/main/iso_compressor.sh
+  curl -fLo iso_compressor.sh https://github.com/Fcharan/Simple-ISO-to-ZSO-Converter/blob/main/iso_compressor.sh
   if [ $? -ne 0 ]; then
     exit 1
   fi
