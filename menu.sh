@@ -2,7 +2,11 @@
 
 install_dependencies() {
   if ! command -v python &>/dev/null; then
+    pkg update
+    pkg upgrade
     pkg install python -y
+    pkg install openssl
+    pkg install clang python-dev libffi-dev
   fi
 
   if ! command -v pip &>/dev/null; then
