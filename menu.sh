@@ -7,10 +7,10 @@ echo "Installing required packages..."
     pkg install clang
     python -m ensurepip --upgrade
     pip install lz4
-    curl -fLo ziso.py https://github.com/Fcharan/Simple-ISO-to-ZSO-Converter/blob/main/ziso.py
+    curl -fLo ziso.py https://raw.githubusercontent.com/Fcharan/Simple-ISO-to-ZSO-Converter/main/ziso.py
 
 echo "Downloading Script..."
-wget https://github.com/Fcharan/Simple-ISO-to-ZSO-Converter/blob/main/iso_compressor.sh -O ~/iso_compressor.sh
+wget https://raw.githubusercontent.com/Fcharan/Simple-ISO-to-ZSO-Converter/main/iso_compressor.sh -O ~/iso_compressor.sh
 
 chmod +x ~/iso_compressor.sh
 
