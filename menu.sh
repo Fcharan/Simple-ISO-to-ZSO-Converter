@@ -14,7 +14,7 @@ wget https://raw.githubusercontent.com/Fcharan/Simple-ISO-to-ZSO-Converter/main/
 
 chmod +x ~/iso_compressor.sh
 
-echo  Use Command 'zso_menu'  Now
+echo  Use Command 'iso_menu'  Now
 echo "alias iso_menu='bash ~/iso_compressor.sh'" >> ~/.bashrc
 
 source ~/.bashrc
