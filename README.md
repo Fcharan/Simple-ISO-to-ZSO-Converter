@@ -38,3 +38,8 @@ chmod +x menu.sh
 This Command Will Guide You And Automatically Installs All Required Files
 
 Use The Command "zso_menu" To Enter Start Menu Again After Exit
+
+## Screenshot
+
+![1000157069](https://github.com/user-attachments/assets/2bb183ba-74c2-4de7-a765-38bef18cefcd)
+
