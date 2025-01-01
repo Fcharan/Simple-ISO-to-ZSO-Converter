@@ -2,9 +2,9 @@
 
 ## Dependencies
 
-• Pyton
+• Python
 
-• lz4
+• Lz4
 
 • Ziso.py
 
