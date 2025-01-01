@@ -15,15 +15,15 @@ wget https://raw.githubusercontent.com/Fcharan/Simple-ISO-to-ZSO-Converter/main/
 chmod +x ~/iso_compressor.sh
 
 echo  Use Command 'zso_menu'  Now
-echo "alias zso_menu='bash ~/iso_compressor.sh'" >> ~/.bashrc
+echo "alias iso_menu='bash ~/iso_compressor.sh'" >> ~/.bashrc
 
 source ~/.bashrc
 exec bash
 
-echo Use Command 'zso_menu'  Now
-if alias zso_menu &>/dev/null; then
+echo Use Command 'iso_menu'  Now
+if alias iso_menu &>/dev/null; then
     # Confirm that setup is complete
-    echo "Simple ISO To ZSO Converter setup complete. You can now use the command 'zso_menu' to start it."
+    echo "Simple ISO Compresser" setup complete. You can now use the command 'iso_menu' to start it."
 else
-    echo "Failed to add alias for 'zso_menu'. Please check the script."
+    echo "Failed to add alias for 'iso_menu'. Please check the script."
 fi
