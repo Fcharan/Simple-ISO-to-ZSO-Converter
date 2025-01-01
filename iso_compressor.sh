@@ -20,20 +20,25 @@ display_menu() {
 }
 
 install_required_dependencies() {
-  echo -e "${YELLOW}The required dependencies for CHD creation are not installed.${NC}"
-  echo -e "${YELLOW}Installing proot-distro...${NC}"
-  pkg install proot-distro -y
-  echo -e "${YELLOW}Installing Ubuntu distribution...${NC}"
-  proot-distro install ubuntu
-  echo -e "${YELLOW}Logging into Ubuntu...${NC}"
-  proot-distro login ubuntu -- bash -c "
-    echo -e '${YELLOW}Updating package list...${NC}' &&
-    apt update &&
-    echo -e '${YELLOW}Installing required packages...${NC}' &&
-    apt install -y mame-tools unzip
-  "
-  echo -e "${GREEN}Dependencies installed successfully. Restarting script...${NC}"
-  exec "$0"
+  read -p "${YELLOW}The required dependencies for CHD creation are not installed. Do you want to install them? (y/n): ${NC}" choice
+  if [[ "$choice" =~ ^[Yy]$ ]]; then
+    echo -e "${YELLOW}Installing proot-distro...${NC}"
+    pkg install proot-distro -y
+    echo -e "${YELLOW}Installing Ubuntu distribution...${NC}"
+    proot-distro install ubuntu
+    echo -e "${YELLOW}Logging into Ubuntu...${NC}"
+    proot-distro login ubuntu -- bash -c "
+      echo -e '${YELLOW}Updating package list...${NC}' &&
+      apt update &&
+      echo -e '${YELLOW}Installing required packages...${NC}' &&
+      apt install -y mame-tools unzip
+    "
+    echo -e "${GREEN}Dependencies installed successfully. Restarting script...${NC}"
+    exec "$0"
+  else
+    echo -e "${RED}Dependencies not installed. Exiting...${NC}"
+    exit 1
+  fi
 }
 
 check_required_dependencies() {
