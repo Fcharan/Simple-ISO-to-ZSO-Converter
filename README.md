@@ -10,6 +10,8 @@
 
 • Mame-Tools
 
+• Chdman
+
 All Credits Goes To Respected Owners
 
 ## Features
