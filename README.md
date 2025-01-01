@@ -1,6 +1,6 @@
 # Simple Program That Converts ISO Into Zso For Termux
 
-#Dependencies
+## Dependencies
 
 • Pyton
 
@@ -8,7 +8,7 @@
 
 • Ziso.py
 
-#Features
+## Features
 
 • Automatically Downloads All Dependencies 
 
@@ -16,7 +16,7 @@
 
 • Automatic 
 
-#Installation
+## Installation
 
 1 - Install [Termux](https://github.com/Fcharan/WinlatorMali/releases/download/0.0/termux-app_v0.118.1+github-debug_arm64-v8a.apk)
 
