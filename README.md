@@ -14,8 +14,6 @@
 
 • Has An Simple Menu
 
-• Automatic 
-
 ## Installation
 
 1 - Install [Termux](https://github.com/Fcharan/WinlatorMali/releases/download/0.0/termux-app_v0.118.1+github-debug_arm64-v8a.apk)
