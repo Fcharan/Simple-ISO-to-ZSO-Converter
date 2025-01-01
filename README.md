@@ -1,4 +1,4 @@
-# Simple Program That Converts ISO Into Zso For Termux
+# Simple Program That Converts ISO Into ZSO Inside Termux Application 
 
 ## Dependencies
 
